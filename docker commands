@@ -1,0 +1,5 @@
+##################################################################
+ONLY APPLICABLE IF THERE IS A TREDITIONAL DOCKER FILE
+
+##First we need to do "mvn clean install" --> to get the latest jar file
+then --> "docker build . -t souvik/accounts" --> to build docker image of "." --> the file that is present at the project location 

@@ -1,0 +1,34 @@
+version: "2.2"
+
+services:
+  configserver:
+    image: skundu2003/config-server
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+#    networks:
+#      - souvik-network
+  accounts:
+    image: skundu2003/accounts
+    mem_limit: 700m
+    ports:
+      - "9999:9999"
+#    networks:
+#      - souvik-network
+    depends_on:
+      - configserver
+#    deploy:
+#      restart_policy:
+#        confition: on-failure
+#        delay: 5s
+#        max_attempts: 3
+#        window: 120s
+
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8081/
+
+
+
+networks:
+  souvik-network:

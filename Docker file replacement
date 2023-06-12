@@ -1,0 +1,14 @@
+"BUILD packs" are the replacement of tredectional Docker file  wrting
+
+command to create docker image "mvn spring-boot:build-image" --> in terminal
+
+
+Importent changes to do in pom.xml to create docker image
+
+				<configuration>
+					<image>
+						<name>microservice/${project.artifactId}</name>
+					</image>
+				</configuration>
+				
+				
