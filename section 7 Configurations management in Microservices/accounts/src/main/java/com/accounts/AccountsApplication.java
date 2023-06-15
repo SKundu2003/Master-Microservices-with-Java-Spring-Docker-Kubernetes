@@ -11,6 +11,7 @@ import org.springframework.context.annotation.ComponentScans;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
+@RefreshScope //to refresh configuration just by hitting --> "/refresh"
 
 @RefreshScope //express an endpoint named "/refresh" to import the changes in properties with out restarting
 //Only use if Autowire is not working properly
