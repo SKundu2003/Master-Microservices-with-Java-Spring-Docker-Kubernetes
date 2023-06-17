@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Curcir-breaker pattern implimentation/configuration-files/Central-Configuration" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Rate Limit pattern/configuration-files/Central-Configuration" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Retry pattern/configuration-files/Central-Configuration" vcs="Git" />
   </component>
 </project>
