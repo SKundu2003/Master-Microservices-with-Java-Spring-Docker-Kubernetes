@@ -4,8 +4,9 @@
 package com.eazybytes.cards.controller;
 
 import java.util.List;
-import java.util.logging.Logger;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,16 +29,16 @@ public class CardsController {
 	private CardsRepository cardsRepository;
 
 //	Implementing the logger
-	private static final Logger log = Logger.getLogger(String.valueOf(CardsController.class));
+private static final Logger logger = LoggerFactory.getLogger(CardsController.class);
 
 	@PostMapping("/myCards")
 	public List<Cards> getCardDetails(@RequestBody Customer customer) {
 //		showing the log
-		log.info("Inside the cards service");
+		logger.info("Inside the cards service");
 
 		List<Cards> cards = cardsRepository.findByCustomerId(customer.getCustomerId());
 
-		log.info("method ended");
+		logger.info("method ended");
 		if (cards != null) {
 			return cards;
 		} else {

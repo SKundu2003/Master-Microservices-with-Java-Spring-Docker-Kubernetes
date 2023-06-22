@@ -36,10 +36,10 @@
 
 
 <!--		dependency for Log aggregation-->
-		<dependency>
-			<groupId>io.opentelemetry</groupId>
-			<artifactId>opentelemetry-exporter-zipkin</artifactId>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>io.opentelemetry</groupId>-->
+<!--			<artifactId>opentelemetry-exporter-zipkin</artifactId>-->
+<!--		</dependency>-->
 
 
 <!--	Dependency to implement resilience4j -->
