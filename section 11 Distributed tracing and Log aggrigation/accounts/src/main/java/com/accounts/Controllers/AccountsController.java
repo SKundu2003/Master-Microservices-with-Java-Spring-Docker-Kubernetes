@@ -8,6 +8,7 @@ import com.accounts.Repositories.AccountsRepository;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @RestController
 public class AccountsController {
@@ -49,10 +51,17 @@ public class AccountsController {
     @Autowired
     LoansFeignClient loansFeignClient;
 
+
+//    ####################################################################################################################
+//    Logger object creation
+    private static final Logger Logger = (java.util.logging.Logger) LoggerFactory.getLogger(AccountsController.class);
     @GetMapping("/getAllDetails")
 //  to implement retry pattern
     @Retry(name = "retryForCustomerDetails",fallbackMethod = "myCustomerDetailsFallBack")
     public CustomerDetails getData(@RequestBody Customer customer){
+//        Logging the data
+        Logger.info("Inside the accounts service");
+
         Accounts accounts = accountsRepository.findAccountsByCustomerId(customer.getCustomerId());
         List<Cards> cards = cardsFeignClient.getCardsDetails(customer);
         List<Loans> loans = loansFeignClient.getAllloans(customer);
@@ -60,6 +69,10 @@ public class AccountsController {
         customerDetails.setAccounts(accounts);
         customerDetails.setCards(cards);
         customerDetails.setLoans(loans);
+
+
+//        Logging the data
+        Logger.info("Data is : "+customerDetails.toString());
         return customerDetails;
     }
 
