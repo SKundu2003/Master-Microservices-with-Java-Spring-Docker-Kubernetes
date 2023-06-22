@@ -57,7 +57,7 @@ public class AccountsController {
     private static final Logger logger = LoggerFactory.getLogger(AccountsController.class);
     @GetMapping("/getAllDetails")
 //  to implement retry pattern
-    @Retry(name = "retryForCustomerDetails",fallbackMethod = "myCustomerDetailsFallBack")
+//    @Retry(name = "retryForCustomerDetails",fallbackMethod = "myCustomerDetailsFallBack")
     public CustomerDetails getData(@RequestBody Customer customer){
 //        Logging the data
         logger.info("Inside the accounts service");
