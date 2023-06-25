@@ -25,13 +25,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("com.accounts.Model")
 
 @EnableFeignClients  //needed to use feignclient
-public class AccountsApplication implements CommandLineRunner {
+public class AccountsApplication{
 
 	public static void main(String[] args) {
 		SpringApplication.run(AccountsApplication.class, args);
-	}
-
-	@Override
-	public void run(String... args) throws Exception {
 	}
 }
