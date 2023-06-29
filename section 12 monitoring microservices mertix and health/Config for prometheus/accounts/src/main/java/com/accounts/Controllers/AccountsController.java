@@ -8,6 +8,7 @@ import com.accounts.Repositories.AccountsRepository;
 
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
+import io.micrometer.core.annotation.Timed;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,8 @@ public class AccountsController {
     @Autowired
     private TestShowingAllConfigData testShowingAllConfigData;
     @PostMapping("/myAccount")
+//    It will tell my matrix the time taken to execute this method
+    @Timed(value = "getAccountDetails.time",description = "Time taken to return the account details")
     public Accounts getAccountDetails(@RequestBody Customer customer){
         Accounts accounts = accountsRepository.findAccountsByCustomerId(customer.getCustomerId());
         return accounts;
