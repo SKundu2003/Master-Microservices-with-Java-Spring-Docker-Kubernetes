@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/section 10 Handling Routing and Cross Cutting in microservices/configuration-files/Central-Configuration" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/section 11 Distributed tracing and Log aggrigation/configuration-files/Central-Configuration" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/section 12 monitoring microservices mertix and health/Config for prometheus/configuration-files/Central-Configuration" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/section 7 Configurations management in Microservices/configuration-files/Central-Configuration" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/section 8 service discovery and registration/configuration-files/Central-Configuration" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/section 9 Making microservices resilient/Bulkhead Pattern/configuration-files/Central-Configuration" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/section 9 Making microservices resilient/Curcir-breaker pattern implimentation/configuration-files/Central-Configuration" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/section 9 Making microservices resilient/Rate Limit pattern/configuration-files/Central-Configuration" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/section 9 Making microservices resilient/Retry pattern/configuration-files/Central-Configuration" vcs="Git" />
+  </component>
+</project>
